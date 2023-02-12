@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 3.</h1>
+    <p>Дано вартість одиниці товару і кількість. Знайти загальну вартість та ПДВ (5% від загальної вартості).</p>
+    <script>
+        //1.Вводимо необхідні дані
+        let valueA = parseInt(prompt('Введіть вартість товару', '0'))
+        let valueB = parseInt(prompt('Введіть кількість товару', '0'))
+
+        //2. Зназодимо результат 
+        let result1 = valueB * valueA
+        let result2 = result1*0.05
+
+
+        //3. Виводимо результат 
+        document.write (`
+            Загальна вартість товару = ${result1} <br>
+            ПДВ (5% від загальної вартості) = ${result2}
+        `)
+    </script>
+</body>
+</html>

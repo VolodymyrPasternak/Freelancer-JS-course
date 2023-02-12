@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 4.</h1>
+    <p>З клавіатури вводиться вік дитини. 
+        Вивести на екран через скільки років вона буде відвідувати садочок, піде у школу, закінчить школу, вступить і закінчить 
+    </p>
+    <script>
+        //1.Вводимо необхідні дані
+        let valueA = parseInt(prompt('Введіть вік', '0'))
+
+        //2. Зназодимо результат 
+        let result1 = 3 - valueA 
+        if (result1 < 0) {result1 = 0}
+
+        let result2 = 7 - valueA
+        if (result2 < 0) {result2 = 0}
+
+        let result3 = 19 - valueA
+        if (result3 < 0) {result3 = 0}
+
+        let result4 = 24 - valueA
+        if (result4 < 0) {result4 = 0}
+
+        //3. Виводимо результат 
+        document.write (`
+            Піде в садочок через ${result1} років <br>
+            Піде в школу через ${result2} років <br>
+            Закінчить школу через ${result3} років <br>
+            Поступить в університет через ${result3} років <br>
+            Закінчить університет через ${result4} років <br>
+        `)
+    </script>
+</body>
+</html>

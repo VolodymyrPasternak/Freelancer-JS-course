@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            
+            text-align: center;
+            padding: 5px 10px;
+        }
+        .line {
+            border-top: 1px solid black;
+            font-weight: bold;
+            text-align: right
+        }
+    </style>
+</head>
+<body>
+    <h1>Задача 6.</h1>
+    <p>З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. 
+        Обчислити вартість кожного товару окремо та загальну вартість. 
+        Вивести чек (як у супермаркеті) використовуючи елементи розмітки.</p>
+    <script>
+        //1.Вводимо необхідні дані
+        let valueA = parseInt(prompt('Введіть вартість товару №1', '0'))
+        let valueAQuantity = parseInt(prompt('Введіть кількість одиниць товару №1', '0'))
+        let valueB = parseInt(prompt('Введіть вартість товару №2', '0'))
+        let valueBQuantity = parseInt(prompt('Введіть кількість одиниць товару №2', '0'))
+        let valueC = parseInt(prompt('Введіть вартість товару №3', '0'))
+        let valueCQuantity = parseInt(prompt('Введіть кількість одиниць товару №3', '0'))
+
+        //2. Зназодимо результат 
+        let resultA = valueA * valueAQuantity
+        let resultB = valueB * valueBQuantity
+        let resultC = valueC * valueCQuantity
+        let resultTotal = resultA + resultB + resultC
+
+        //3. Виводимо результат 
+        document.write (`
+            <table>
+                <tr>
+                    <th colspan="3">Роги та копита - SHOP</th>
+                </tr>
+                <tr>
+                    <td>${valueAQuantity} * товар №1</td>
+                    <td>${valueA}</td>
+                    <td>${resultA}</td>
+                </tr>
+                <tr>
+                    <td>${valueBQuantity} * товар №2</td>
+                    <td>${valueB}</td>
+                    <td>${resultB}</td>
+                </tr>
+                <tr>
+                    <td>${valueCQuantity} * товар №3</td>
+                    <td>${valueC}</td>
+                    <td>${resultC}</td>
+                </tr>
+                <tr class="line">
+                    <td colspan="2">Total</td>
+                    <td>${resultTotal}</td>
+                </tr>
+            </table>
+        `)
+    </script>
+</body>
+</html>
