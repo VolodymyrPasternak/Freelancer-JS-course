@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            
+            text-align: center;
+            padding: 5px 10px;
+        }
+        .line {
+            border-top: 1px solid black;
+            font-weight: bold;
+            text-align: right
+        }
+    </style>
+</head>
+<body>
+    <h1>Задача 6.</h1>
+    <p>З клавіатури вводиться номер дня тижня. Вивести на екран назву дня</p>
+    <script>
+        //1.Вводимо необхідні дані
+        const dayNumber = parseInt(prompt('Введіть номер дня', '0'))
+       
+        //2. Зназодимо результат 
+        let dayName
+        switch (dayNumber) {
+            case 1: dayName = 'manday'
+            break;
+            case 2: dayName = 'tuesday'
+            break;
+            case 3: dayName = 'wednesday'
+            break;
+            case 4: dayName = 'thursday'
+            break;
+            case 5: dayName = 'friday'
+            break;
+            case 6: dayName = 'saturday'
+            break;
+            case 7: dayName = 'sunday'
+            break
+            default: dayName = 'Enter correct day number'
+                break;
+        }
+
+        //3. Виводимо результат 
+        document.write (`
+           ${dayName}
+        `)
+    </script>
+</body>
+</html>

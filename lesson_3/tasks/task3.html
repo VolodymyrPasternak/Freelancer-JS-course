@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 3.</h1>
+    <p>Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.).</p>
+    <script>
+        //1.Вводимо необхідні дані
+        const minValue = 1
+        const maxValue = 5
+        const enterValueFirstTry = parseInt(prompt(`Введіть число від 1 до 5 (залишилось 2 спроби)`, `0`))
+
+
+        //2. Зназодимо результат 
+        const genericValueFirst = minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+        if (genericValueFirst == enterValueFirstTry) 
+            alert(`Вітаю! Ви вгадали!`)
+            else if (genericValueFirst !== enterValueFirstTry) {
+                const genericValueSecond = minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+                const enterValueSecondTry = parseInt(prompt(`Введіть число від 1 до 5 (залишилась 1 спроба)`, `0`))
+            } else if (genericValueSecond == enterValueSecondTry)
+                alert(`Вітаю! Ви вгадали!`)
+                else (genericValueSecond !== enterValueSecondTry)  
+                alert(`Бажаємо успіхів наступного разу`)
+            
+       
+
+        //3. Виводимо результат 
+
+
+    </script>
+</body>
+</html>
