@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 5.</h1>
+    <p>Задача 5. Створити окремі функції, які переводять:
+    1) Сантиметри у дюйми;
+    2) Кілограми у фунти;
+    3) Кілометри у милі.
+</p>
+    <script>
+        //1.Вводимо необхідні дані
+        const cmValue = parseInt(prompt(`Введіть к-сть см`, `0`))
+        const kgValue = parseInt(prompt(`Введіть к-сть кг`, `0`))
+        const kmValue = parseInt(prompt(`Введіть к-сть км`, `0`)) 
+            
+        //2. Зназодимо результат  
+        let inchValue = function (cmValue) { return cmValue * 0.393701}
+        let poundsValue = function (kgValue) { return kgValue * 2.20462}
+        let mileValue = function (kgValue) { return kgValue * 0.621371}
+
+        let inchAmount = inchValue(cmValue)
+        let poundsAmount = poundsValue(kgValue)
+        let mileAmount = mileValue(kmValue)
+        //3. Виводимо результат 
+        document.write(`
+        ${cmValue}cm = ${inchAmount}inch<br>
+        ${kgValue}kg = ${poundsAmount}lb<br>
+        ${kmValue}km = ${mileAmount}mil
+        `)
+    </script>
+</body>
+</html>

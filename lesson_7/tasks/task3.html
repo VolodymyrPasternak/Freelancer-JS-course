@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Задача 3.</h1>
+    <p>Створити окремі функції, які для 4 чисел знаходять:
+    1)суму;
+    2)добуток;
+    3)середнє арифметичне;
+    4)мінімальне значення
+</p>
+    <script>
+        //1.Вводимо необхідні дані
+        const num1 = parseInt(prompt(`Введіть число 1`, `0`))
+        const num2 = parseInt(prompt(`Введіть число 2`, `0`))
+        const num3 = parseInt(prompt(`Введіть число 3`, `0`))
+        const num4 = parseInt(prompt(`Введіть число 4`, `0`))
+
+        //2. Зназодимо результат  
+        function sum(num1, num2, num3, num4) {
+            return num1 + num2 + num3 + num4
+        }
+        function product(num1, num2, num3, num4) {
+            return num1 * num2 * num3 * num4
+        }
+        function avarage(num1, num2, num3, num4) {
+            return (num1 + num2 + num3 + num4) / 4
+        }
+        function minValue(num1, num2, num3, num4) {
+            let min 
+            min = (num1 > num2) ? num2 : num1 
+            min = (min > num3) ? num3 : min
+            min = (min > num4) ? num4 : min
+            return min
+        }
+
+        let sumValue = sum(num1, num2, num3, num4)
+        let productValue = product(num1, num2, num3, num4)
+        let avarageValue = avarage(num1, num2, num3, num4)
+        let minimalValue = minValue(num1, num2, num3, num4)
+        
+        //3. Виводимо результат 
+        document.write(`
+            1)суму: ${sumValue} <br>
+            2)добуток: ${productValue} <br> 
+            3)середнє арифметичне: ${avarageValue} <br>
+            4)мінімальне значення: ${minimalValue}          
+        `)
+    </script>
+</body>
+</html>
