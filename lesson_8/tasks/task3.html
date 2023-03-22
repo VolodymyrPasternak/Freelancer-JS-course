@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Задача 3.</h1>
+    <p>Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я «Іван».</p>
+    <script>
+        //1.Вводимо необхідні дані
+        const nameList = ['Іван', 'Петро', 'Іван', 'Горпина', 'Василина', 'Трохим' ]
+
+        //2. Зназодимо результат  
+        function findNamematchedQuantity(names) {
+            let matchedIvan = 0
+            for (let i = 0; i < names.length; i++) {
+                if (names[i] === 'Іван')
+                    matchedIvan++
+            }
+            return matchedIvan
+        }
+        let nameMatched = findNamematchedQuantity(nameList)
+
+
+        //3. Виводимо результат 
+        document.write(`
+        Дано масив імен учнів ${nameList}<br>
+            Iм’я «Іван» зустрічається: ${nameMatched} разів<br>
+        `)
+    </script>
+</body>
+</html>

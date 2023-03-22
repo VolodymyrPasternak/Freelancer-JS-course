@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 7.</h1>
+    <p>Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:
+    1) за весь рік;
+    2) у першій половині року;
+    3) у другій половині року;
+    4) за літо;
+    5) за ІІ квартал;
+    6) за парні місяці (з парними номерами);
+    7) за місяці, які є початковими у сезоні (весна, літо, осінь, зима).
+</p>
+        
+    <script>
+         //1.Вводимо необхідні дані
+         const billsSequence = []
+            for (let i = 0; i < 12; i++) {
+                billsSequence.push(100 + Math.floor(Math.random() * (500 - 100 + 1)));
+            }
+        
+        //2. Зназодимо результат
+        let spendingsOverYear = (bills) => {
+            let spend = 0 
+            for (let i = 0; i < bills.length; i++) 
+                spend += bills[i];
+            return spend
+        }
+        let spendingsFirstHalfOfYear = (bills) => {
+            let spend = 0
+            for (let i = 0; i < 6; i++)
+                spend += bills[i];
+            return spend
+        }
+        let spendingsSecondHalfOfYear = (bills) => {
+            let spend = 0
+            for (let i = 6; i < bills.length; i++)
+                spend += bills[i];
+            return spend
+        }
+        let spendingsDurignSummer = (bills) => {
+            let spend = 0
+            for (let i = 6; i < 9; i++)
+                spend += bills[i];
+            return spend
+        }
+        let spendingsSecondQuarter = (bills) => {
+            let spend = 0
+            for (let i = 4; i < 7; i++)
+                spend += bills[i];
+            return spend
+        }
+
+        let spendingsEvenMonthes = (bills) => {
+                let spend = 0
+                for (let i = 0; i < bills.length; i++) {
+                    if (i%2 === 0) {
+                        spend +=bills[i]
+                    }
+                }
+            }
+        let spendingsEvryFirstMonthInSeason = (bills) => {
+            let spend = 0
+            for (let i = 2 ; i < bills.length; i+=3)
+                    spend += bills[i];
+            return spend
+        }
+
+        //3. Виводимо результат
+        document.write(`
+            1) кількість грошей за весь рік ${spendingsOverYear(billsSequence)}</br>
+            2) кількість грошей у першій половині року ${spendingsFirstHalfOfYear(billsSequence)}</br>
+            3) кількість грошей у другій половині року ${spendingsSecondHalfOfYear(billsSequence)}</br>
+            4) кількість грошей за літо ${spendingsDurignSummer(billsSequence)}</br>
+            5) кількість грошей за ІІ квартал ${spendingsSecondQuarter(billsSequence)}</br>
+            6) кількість грошей за парні місяці (з парними номерами) ${spendingsEvenMonthes(billsSequence)}</br>
+            7) кількість грошей за місяці, які є початковими у сезоні (весна, літо, осінь, зима)${spendingsEvryFirstMonthInSeason(billsSequence)}.
+        `)
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 8.</h1>
+    <p>. Дано одновимірний масив, у якому зберігається певна виграшна сума (елементи заповнюються випадковим чином значеннями
+    від -500 до 500). Надаючи користувачу можливість вибирати номери елементів (поки він не відмовиться). Знаходити сумарний
+    виграш.</p>
+    <script>
+         //1.Вводимо необхідні дані
+        let prizeSum = 0
+        let userNumber = null;
+        //2. Зназодимо результат 
+        do {
+            let prizeList = []
+            for (let i = 0; i < 10; i++) {
+                prizeList.push(Math.floor(Math.random() * 1001) - 500)
+            }
+            userNumber = parseInt(prompt(`ВВедіть номер елементу від 1 -10`, `0`))
+            
+            for (let i = 0; i < prizeList.length; i++) {
+                if (userNumber == i+1) {
+                    prizeSum += prizeList[i]
+                }
+            }
+        } while (!isNaN(userNumber))
+       
+        //3. Виводимо результат 
+        document.write(`Сума Вашого виграшу = ${prizeSum}`)
+    </script>
+</body>
+</html>

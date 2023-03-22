@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 4.</h1>
+    <p>Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які :
+    • починаються на букву «А»;
+    • перша і остання літери співпадають;
+    • складаються з більше ніш 5 символів;
+</p>
+    <script>
+        //1.Вводимо необхідні дані
+        const carNumbers = ['AA0099B', 'BO0D', 'AT99C', 'AN05B', 'TS0099Y', 'CX0099N', 'CX0099C']
+        
+        console.log(carNumbers[carNumbers.length - 1])
+        console.log(carNumbers[0])
+        //2. Зназодимо результат 
+        const startsAInNumbers = function (numbers) {
+            let startsA = 0
+            for (let i = 0; i < numbers.length; i++) {
+                if (numbers[i][0] === 'A')
+                startsA++
+            }
+            return startsA
+        }
+
+        const firstAndLastSymbolSimilar = function (numbers) {
+            let firstAndLastCounter = 0
+            for (let i = 0; i < numbers.length; i++) {
+                if (numbers[i][0] === numbers[i][numbers.length-1])
+                    firstAndLastCounter++
+            }
+            return firstAndLastCounter
+        }
+
+        const hasMoreThan5Symbols = function (numbers) {
+            let hasMoreThan5Counter = 0
+            for (let i = 0; i < numbers.length; i++) {
+                if (numbers[i].length > 5)
+                    hasMoreThan5Counter++
+            }
+            return hasMoreThan5Counter
+        }
+        
+        //3. Виводимо результат 
+        
+        document.write(`
+        Кількість номерів, які починаються на букву «А»: ${startsAInNumbers(carNumbers)} </br>
+        Кількість номерів, ерша і остання літери співпадають : ${firstAndLastSymbolSimilar(carNumbers)}</br>
+         Кількість номерів, які складаються з більше ніш 5 символів: ${hasMoreThan5Symbols(carNumbers)} 
+        `)
+    </script>
+</body>
+</html>

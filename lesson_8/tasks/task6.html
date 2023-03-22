@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            display: inline-flex;
+            margin: 30px;
+        }
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Задача 6.</h1>
+    <p>Дано послідовність цін товарів та назв (у окремих масивах). 
+        Вивести на екран ті, які може собі дозволити користувач
+    (кількість грошей задається).</p>
+    <script>
+        //1.Вводимо необхідні дані
+        let productsPrices = [1000, 20, 31]
+        let productsTitles = ['cheese', 'juice', 'bread']
+        const userMoneyAmount = parseInt(prompt('Введіть кількість грошей у користувача', '0'))
+
+        //2. Зназодимо результат   
+        function getUserAffordability(price, title, moneyAmount) {
+            let canAfford = []
+            for (let i = 0; i < price.length; i++) {
+                if (price[i] < moneyAmount)
+                canAfford.push(title[i])
+            }
+            return canAfford
+        }
+        let userCanAfford =  getUserAffordability(productsPrices, productsTitles, userMoneyAmount)
+        //3. Виводимо результат
+        document.write(`
+        Користувач може придбати: ${userCanAfford}
+        `)
+            
+    </script>
+</body>
+</html>

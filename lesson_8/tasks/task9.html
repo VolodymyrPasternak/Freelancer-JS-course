@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 9.</h1>
+    <p>Морський бій. Користувач вводить кількість клітинок одновимірного масиву 
+        та кількість одиночних кораблів. Комп’ютер
+    довільно розміщує ці одиночні кораблі у масиві по один у клітинці 
+    (якщо у клітинці 0, то клітинка пуста, якщо 1 – то це
+    означає, що там є корабель. Користувач вводить номер клітинки, куди стріляє. 
+    Гра продовжується до тих пір, поки не
+    будуть потоплені усі кораблі.</p>
+    <script>
+         //1.Вводимо необхідні дані
+        const cellsQuantity = parseInt(prompt(`Введіть кількість клітинок `,`0`))
+        const shipsQuantity = parseInt(prompt(`Введіть кількість кораблів`,`0`))
+        //2. Зназодимо результат  
+        // function createBattleField(cells, ships) {
+           
+        //     let shipsQuantity = 0
+            
+        //     return battleField
+        // }
+        // let battleField = createBattleField(cellsQuantity, shipsQuantity)
+
+         let battleField = []
+            for (let i = 0; i < 10; i++) {
+                battleField.push(0)
+            }
+        //3. Виводимо результат 
+        document.write(`кількість = ${battleField} `)
+        
+    </script>
+</body>
+</html>

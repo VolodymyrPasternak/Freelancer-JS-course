@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 1.</h1>
+    <p>Задача 1. Дано масив, який містить оцінки з К предметів. 
+        Знайти середній бал і з’ясувати до якої категорії він
+    відноситься (відмінник, двійочник (має хоча би одну двійку), хорошист 
+    (оцінки добре і відмінно), трійочник(є хоча би
+    одна трійка)).</p>
+    <script>
+        //1.Вводимо необхідні дані
+        const studentRating = []
+        for (let i = 0; i < 5; i++) {
+            studentRating.push(2 + Math.floor(Math.random() * (5 - 2 + 1)));   
+        }
+
+        //2. Зназодимо результат 
+        function getStudentRate(arr) {
+            let avarageScore = 0
+            for (let i = 0; i < arr.length; i++) {
+                avarageScore+=arr[i]
+            }
+            avarageScore = avarageScore / arr.length
+            return Math.floor(avarageScore)
+        }
+
+        function getStudentCategory(arr) {
+            let scoreCategory
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === 2)
+                return scoreCategory = `двійочник`
+            }
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === 3)
+                return scoreCategory = `трійочник`
+            }
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === 4)
+                return scoreCategory = `хорошист`
+            }
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === 5)
+                return scoreCategory = `відмінник`
+            }
+        }
+
+        let avarageScore = getStudentRate(studentRating)
+        let scoreCategory = getStudentCategory(studentRating)
+
+        //3. Виводимо результат 
+        document.write(`
+            Оцінки студента: ${studentRating}</br>
+            Cередній бал студента: ${avarageScore}</br>
+            Категорія студента: ${scoreCategory}
+        `)
+    </script>
+</body>
+</html>

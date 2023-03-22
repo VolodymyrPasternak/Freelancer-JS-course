@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 5.</h1>
+    <p>Дано послідовність оцінок учня. Підрахувати кількість:
+    1) двійок
+    2) кількість хороших оцінок (добре, відмінно);
+    3) кількість оцінок, які нижче середнього.
+</p>
+    <script>
+        //1.Вводимо необхідні дані
+        const studentRating = []
+            for (let i = 0; i < 7; i++) {
+                studentRating.push(2 + Math.floor(Math.random() * (5 - 2 + 1)));
+            }
+            
+        //2. Зназодимо результат  
+        const scores_2 = function (scores) {
+            let badScoresCounter = 0
+            for (let i = 0; i < scores.length; i++) {
+                if (scores[i] === 2)
+                badScoresCounter++
+            }
+            return badScoresCounter
+        }
+        const goodScores = function (scores) {
+            let goodScoresCounter = 0
+            for (let i = 0; i < scores.length; i++) {
+                if (scores[i] >= 4)
+                    goodScoresCounter++
+            }
+            return goodScoresCounter
+        }
+        const badScores = function (scores) {
+            let badScoresCounter = 0
+            for (let i = 0; i < scores.length; i++) {
+                if (scores[i] <= 3)
+                    badScoresCounter++
+            }
+            return badScoresCounter
+        }
+
+
+        //3. Виводимо результат 
+        document.write(`
+        Дано послідовність оцінок учня: ${studentRating}<br>
+        кількість двійок: ${scores_2(studentRating)}<br>
+        кількість хороших оцінок: ${goodScores(studentRating)}<br>
+        кількість оцінок, які нижче середнього: ${badScores(studentRating)}
+        `)
+    </script>
+</body>
+</html>
