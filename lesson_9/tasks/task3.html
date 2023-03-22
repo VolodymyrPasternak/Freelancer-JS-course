@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Задача 3.</h1>
+    <p>Користувач вводить кількість елементів. Створити масив, у якому перші 5 елементів заповнені 1-цями, 
+        а інші до кінця масиву заповнені 7-ками.</p>
+    <script>
+        //1.Вводимо необхідні дані
+            const elementsQuantity = parseInt(prompt(`Введіть кількість елементів, яка більша 5`, `0`))
+
+            //2. Зназодимо результат 
+            const arr = new Array(elementsQuantity).fill(7).fill(1, 0, 5)
+
+            //3. Виводимо результат 
+            document.write(`
+            ${arr}
+        `)
+    </script>
+</body>
+</html>

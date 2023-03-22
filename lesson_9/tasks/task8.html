@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 8.</h1>
+    <p>. Дано масив номерів авто. Сформувати новий масив тих, які починаються на «А»</p>
+    <script>
+         //1.Вводимо необхідні дані
+        function createElementsList() {
+            let elementsList = []
+            let userNumber
+            do {
+                userNumber = toUpperCase(prompt(`Введіть номер авто`, `0`))
+                if (!isNaN(userNumber))
+                    elementsList.push(userNumber)
+            } while (!isNaN(userNumber));
+            return elementsList
+        }
+        let carRegistrationList = createElementsList()
+        //2. Зназодимо результат 
+        let stratACarRegistrationList = []
+        carRegistrationList.forEach(el => {if (el[0] === 'A') stratACarRegistrationList.push(el)})
+
+        //3. Виводимо результат 
+        document.write(`масив тих, які починаються на «А» : ${stratACarRegistrationList}`)
+    </script>
+</body>
+</html>

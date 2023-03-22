@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 7.</h1>
+    <p>Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за 1000 грн. дати 30% знижки.</p>
+    <script>
+         //1.Вводимо необхідні дані
+         function createElementsList() {
+            let elementsList = []
+            let userNumber
+            do {
+                userNumber = parseInt(prompt(`Введіть числове значення ціни`, `0`))
+                if (!isNaN(userNumber))
+                    elementsList.push(userNumber)
+            } while (!isNaN(userNumber));
+            return elementsList
+        }
+        let priceList = createElementsList()
+
+        //2. Зназодимо результат
+        let newPriceList = priceList.map(el => el > 1000 ? el * 0.7 : el)
+
+        //3. Виводимо результат
+        document.write(`
+            ${newPriceList}
+        `)
+    </script>
+</body>
+</html>

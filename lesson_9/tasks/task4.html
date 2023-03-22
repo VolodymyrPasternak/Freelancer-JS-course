@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 4.</h1>
+    <p>Дано масив елементів. Вивести на екран елементи, що більші за 100
+</p>
+    <script>
+        //1.Вводимо необхідні дані
+        function createElementsList() {
+            let elementsList = []
+            let userNumber
+            do {
+                userNumber = parseInt(prompt(`Введіть числове значення елементу масиву`, `0`))
+                if (!isNaN(userNumber))
+                    elementsList.push(userNumber)
+            } while (!isNaN(userNumber));
+            return elementsList
+        }
+        let elementsList = createElementsList()
+        
+        //2. Зназодимо результат 
+        let requestedList = []
+        for (const el of elementsList) {
+            if (el > 100) 
+                requestedList.push(el)
+        }
+        
+        //3. Виводимо результат 
+        
+        document.write(`
+            ${requestedList}
+        `)
+    </script>
+</body>
+</html>
