@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 5.</h1>
+    <p>Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 10000).
+        Підрахувати кількість змін цін</p>
+    <script>
+    //1.Вводимо необхідні дані
+    function getHistoryPrices(monthsQuantity, minValue, maxValue) {
+        let arr = []
+        for (let i = 0; i < monthsQuantity; i++) {
+            arr.push(minValue + Math.floor(Math.random() * (maxValue - minValue + 1)))
+        }
+        return arr
+    }
+    const historyPrices = getHistoryPrices(12, 1, 10000)
+
+
+    //2. Зназодимо результат value of prices as a percentage of the maximum
+    let priceChanges = historyPrices.reduce((change, el, index, baseArr) => {
+            return el !== baseArr[index + 1] && baseArr[index + 1] !== undefined ? change+1 : change
+    }, 0)
+    
+
+    //3. Виводимо результат 
+    document.write(`
+        Дано історію цін на цінні папери: ${historyPrices}</br>
+        кількість змін цін : ${priceChanges}
+    `)
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 6.</h1>
+    <p>Визначити, чи є ціна, що менше 1000</p>
+    <script>
+        //1.Вводимо необхідні дані
+        function getHistoryPrices(monthsQuantity, minValue, maxValue) {
+            let arr = []
+            for (let i = 0; i < monthsQuantity; i++) {
+                arr.push(minValue + Math.floor(Math.random() * (maxValue - minValue + 1)))
+            }
+            return arr
+        }
+        const historyPrices = getHistoryPrices(12, 1, 10000)
+
+
+        //2. Зназодимо результат value of prices as a percentage of the maximum
+        let priceLessThan_1000 = historyPrices.some(el => el<1000)
+
+
+        //3. Виводимо результат 
+        document.write(`
+            Дано історію цін на цінні папери: ${historyPrices}</br>
+            чи є ціна, що менше 1000 : ${priceLessThan_1000}
+        `)
+    </script>
+</body>
+</html>
